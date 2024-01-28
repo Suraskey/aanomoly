@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div id="demo-container" class="engine-demo text-center">
+        <h1>Predictive Maintenance for the CFM LEAP-1A Engine</h1>
+        <p class="lead">Monitoring Engine Oil Pressure for Early Detection of Issues</p>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="anomaly-chart">
+                <img src="{{ url_for('static', filename='anomaly_chart.png') }}" alt="Anomaly Detection Chart" class="img-fluid">
+                <p class="caption">Identifying Risk Factors with Isolation Forest</p>
+            </div>
+            <div class="engine-visual animated scale-up" style="margin-left: 20px;">
+                <img src="{{ url_for('static', filename='giphy.gif') }}" alt="Leap 1A Engine GIF" class="img-fluid">
+                <p class="caption"></p>
+                <p class="caption">Dynamic Visualization of Engine</p>
+
+            </div>
+        </div>
+
+
+
+    <style>
+        @keyframes scaleUp {
+            from {
+                transform: scale(0.5);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .animated {
+            animation: scaleUp 1s ease-in-out;
+        }
+    </style>
+{% endblock %}
